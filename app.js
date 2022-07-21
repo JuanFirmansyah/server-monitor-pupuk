@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
 
 const mongoose = require('mongoose');
 mongoose.connect(
-  'mongodb+srv://admin:admin@monitor.aawfx.mongodb.net/db_monitor?retryWrites=true&w=majority',
+  `mongodb+srv://admin:${process.env.ACCESS_TOKEN}@monitor.aawfx.mongodb.net/db_monitor?retryWrites=true&w=majority`,
+
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

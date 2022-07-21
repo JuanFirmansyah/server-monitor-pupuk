@@ -50,6 +50,8 @@ let volume = [
   'mg/L',
 ];
 
+// kumpulan perintah-perintah di database
+
 // cek semua data jika tidak ada di database maka jalankan function withOutData(), jika ada maka jalankan function hasData()
 // Data.find({}, function (err, data) {
 //   if (err) {
@@ -62,7 +64,25 @@ let volume = [
 // });
 
 // delete all data in database
-deleteAll();
+// deleteAll();
+
+// check data
+// checkData();
+
+// buatlah switch case pengkondisian di bawah
+
+// cek jika data di database ada atau tidak
+function checkData() {
+  Data.find({}, function (err, data) {
+    if (err) {
+      console.log(err);
+    } else if (data.length === 0) {
+      console.log('Data tidak ada');
+    } else {
+      console.log('Data ada');
+    }
+  });
+}
 
 // run this function to start filling database
 function withOutData() {
